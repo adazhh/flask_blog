@@ -1,0 +1,15 @@
+一、extensions.py中24-35行中判断用户登录状态
+代码：
+# 判断当前用户的认证状态
+#!!!!!!!!!!!!!!!!!!!
+# 当我们调用current_user时， Flask-Login会调用用户加载函数load_user并返回对应的用户对象。 
+@login_manager.user_loader
+def load_user(user_id):
+    from bluelog.models import Admin
+    user = Admin.query.get(int(user_id))
+    return user
+
+login_manager.login_view = 'auth.login'
+login_manager.login_message_category = 'warning'
+
+二、models.py中评论的子评论是怎么设置的，子评论的评论是怎么在html中渲染出来的
