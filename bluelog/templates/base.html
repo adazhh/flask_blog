@@ -1,76 +1,218 @@
 {% from 'bootstrap/nav.html' import render_nav_item %}
 <!DOCTYPE html>
 <html lang="en">
+{#<head>#}
+{#    {% block head %}#}
+{#        <meta charset="utf-8">#}
+{#        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">#}
+{#        <title>{% block title %}{% endblock title %} - {{ admin.blog_title|default('Blog Title') }}</title>#}
+{##}
+{#        <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">#}
+{#        <link rel="stylesheet"#}
+{#              href="{{ url_for('static', filename='css/%s.min.css' % request.cookies.get('theme', 'perfect_blue')) }}"#}
+{#              type="text/css">#}
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">#}
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.css') }}" type="text/css">#}
+{#        <link rel="stylesheet" href="{{ url_for('static', filename='css/stylebsll.css') }}" type="text/css">#}
+{#    {% endblock head %}#}
+{#</head>#}
+{#头部声明#}
 <head>
     {% block head %}
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta http-equiv="cache-control" content="nocache">
+
         <title>{% block title %}{% endblock title %} - {{ admin.blog_title|default('Blog Title') }}</title>
+
+
         <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-        <link rel="stylesheet"
-              href="{{ url_for('static', filename='css/%s.min.css' % request.cookies.get('theme', 'perfect_blue')) }}"
-              type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/ajustment.css') }}" type="text/css">
+        <title>ada's blog </title>
     {% endblock head %}
 </head>
-<body>
-{% block nav %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('blog.index') }}">{{ admin.blog_title }}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
-                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                    {{ render_nav_item('blog.index', 'Home') }}
-                    {{ render_nav_item('blog.about', 'About') }}
-                </ul>
+{#头部声明#}
 
-                <ul class="nav navbar-nav navbar-right">
-                    {% if current_user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true"
-                               aria-expanded="false">
-                                New <span class="caret"></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url_for('admin.new_post') }}">Post</a>
-                                <a class="dropdown-item" href="{{ url_for('admin.new_category') }}">Category</a>
-                                <a class="dropdown-item" href="{{ url_for('admin.new_link') }}">Link</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true"
-                               aria-expanded="false">
-                                Manage <span class="caret"></span>
+{#    <!-- 导航栏 -->#}
+{#    <!-- navbar导航；navbar-expand在大屏幕时展开，小屏幕是折叠;navbar-light使字体颜色变浅 -->#}
+{#    <!-- fixed-top生成固定定位的元素，相对于浏览器窗口进行定位 -->#}
+{#    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">#}
+{#        <div class="container">#}
+{#            <ul class="navbar-nav mr-auto" style="color: white;font-weight: 700;font-size: 21px;">#}
+{#                    {{ render_nav_item('blog.index', '首页') }}#}
+{#                    {{ render_nav_item('blog.about', '关于') }}#}
+{#            </ul>#}
+{#            <!-- 折叠导航栏标准格式，data-target点击相应位置 -->#}
+{#            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"#}
+{#                aria-expanded="false">#}
+{#                菜单#}
+{#            </button>#}
+{#            <!-- 被折叠内容 -->#}
+{#            <div class="collapse navbar-collapse" id="navbarResponsive">#}
+{#                <!-- ml-auto 类可以设置子元素左外边距为 auto -->#}
+{#                <ul class="nav navbar-nav ml-auto">#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="contact.html">  </a>#}
+{#                    </li>#}
+{##}
+{#                </ul>#}
+{##}
+{#                <ul class="nav navbar-nav navbar-right">#}
+{#                    {% if current_user.is_authenticated %}#}
+{#                        <li class="nav-item dropdown">#}
+{#                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"#}
+{#                               aria-haspopup="true"#}
+{#                               aria-expanded="false">#}
+{#                                新建 <span class="caret"></span>#}
+{#                            </a>#}
+{#                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                                <a class="dropdown-item" href="{{ url_for('admin.new_post') }}">Post</a>#}
+{#                                <a class="dropdown-item" href="{{ url_for('admin.new_category') }}">Category</a>#}
+{#                                <a class="dropdown-item" href="{{ url_for('admin.new_link') }}">Link</a>#}
+{#                            </div>#}
+{#                        </li>#}
+{#                        <li class="nav-item dropdown">#}
+{#                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"#}
+{#                               aria-haspopup="true"#}
+{#                               aria-expanded="false">#}
+{#                                管理 <span class="caret"></span>#}
+{#                                {% if unread_comments %}#}
+{#                                    <span class="badge badge-success">未读评论</span>#}
+{#                                {% endif %}#}
+{#                            </a>#}
+{#                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                                <a class="dropdown-item" href="{{ url_for('admin.manage_post') }}">文章</a>#}
+{#                                <a class="dropdown-item" href="{{ url_for('admin.manage_category') }}">目录</a>#}
+{#                                <a class="dropdown-item" href="{{ url_for('admin.manage_comment') }}">#}
+{#                                    评论#}
+{#                                    {% if unread_comments %}#}
+{#                                        <span class="badge badge-success">{{ unread_comments }}</span>#}
+{#                                    {% endif %}#}
+{#                                </a>#}
+{#                                <a class="dropdown-item" href="{{ url_for('admin.manage_link') }}">Link</a>#}
+{#                            </div>#}
+{#                        </li>#}
+{#                        {{ render_nav_item('admin.settings', '设置') }}#}
+{#                    {% endif %}#}
+{#                </ul>#}
+{##}
+{#            </div>#}
+{#        </div>#}
+{#    </nav>#}
+{#    <!-- 导航栏 -->#}
+
+<!-- 导航栏 -->
+<!-- navbar导航；navbar-expand在大屏幕时展开，小屏幕是折叠;navbar-light使字体颜色变浅 -->
+<!-- fixed-top生成固定定位的元素，相对于浏览器窗口进行定位 -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+        <!-- 让文本看起来大一号 -->
+        {#            <a class="navbar-brand" href="index.html">首页</a>#}
+        <a class="navbar-brand" href="index.html" id="index_css">
+            {{ render_nav_item('blog.index', '首页') }}
+        </a>
+        <!-- 折叠导航栏标准格式，data-target点击相应位置 -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-expanded="false">
+            菜单
+        </button>
+        <!-- 被折叠内容 -->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <!-- ml-auto 类可以设置子元素左外边距为 auto -->
+            <ul class="nav navbar-nav ml-auto">
+
+                <!-- 导航栏标准格式 -->
+                {% if current_user.is_authenticated %}
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            新建
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('admin.new_post') }}" id="folding">文章</a></li>
+                            <li><a href="{{ url_for('admin.new_category') }}" id="folding">分类</a></li>
+                            <li><a href="{{ url_for('admin.new_link') }}" id="folding">链接</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            管理<b class="caret"></b>
+                            {% if unread_comments %}
+                                <span class="badge badge-success">新评论</span>
+                            {% endif %}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('admin.manage_post') }}" id="folding">文章</a></li>
+                            <li><a href="{{ url_for('admin.manage_category') }}" id="folding">分类</a></li>
+                            <li><a href="{{ url_for('admin.manage_comment') }}" id="folding">
+                                评论
                                 {% if unread_comments %}
-                                    <span class="badge badge-success">new</span>
+                                    <span class="badge badge-success">{{ unread_comments }}</span>
                                 {% endif %}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ url_for('admin.manage_post') }}">Post</a>
-                                <a class="dropdown-item" href="{{ url_for('admin.manage_category') }}">Category</a>
-                                <a class="dropdown-item" href="{{ url_for('admin.manage_comment') }}">
-                                    Comment
-                                    {% if unread_comments %}
-                                        <span class="badge badge-success">{{ unread_comments }}</span>
-                                    {% endif %}
-                                </a>
-                                <a class="dropdown-item" href="{{ url_for('admin.manage_link') }}">Link</a>
-                            </div>
-                        </li>
-                        {{ render_nav_item('admin.settings', 'Settings') }}
-                    {% endif %}
-                </ul>
+                            </a></li>
+                            <li><a href="{{ url_for('admin.manage_link') }}" id="folding">链接</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('admin.settings') }}">设置</a>
+                    </li>
+
+                {% endif %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('blog.about') }}">关于</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- 导航栏 -->
+
+<!-- 头部背景 -->
+{#<header class="masthead" style="background-image: url('../static/img/home-bg.jpg')">#}
+{#{% block header %}#}
+{#    <div class="overlay"></div>#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-lg-8 col-md-10 mx-auto">#}
+{#                <div class="site-heading">#}
+{#                    <h1>adazhh's blog</h1>#}
+{#                    <span class="subheading">It's beatuiful day.</span>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock header %}#}
+{#</header>#}
+{#<!-- 头部背景 -->#}
+
+
+<!-- 头部照片 -->
+<header class="masthead" style="background-image: url('../static/img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>博客管理系统</h1>
+                    <span class="subheading">数据库课程设计.</span>
+                </div>
             </div>
         </div>
-    </nav>
-{% endblock nav %}
+    </div>
+</header>
+<!-- 头部照片 -->
 
+
+<body>
 <main class="container">
     {% for message in get_flashed_messages(with_categories=True) %}
         <div class="alert alert-{{ message[0] }}" role="alert">
@@ -79,26 +221,28 @@
         </div>
     {% endfor %}
     {% block content %}{% endblock content %}
+
+
     {% block footer %}
         <footer>
             <p class="float-left">
-                <small> &copy; 2018 <a href="http://greyli.com" title="Written by Grey Li">Grey Li</a> -
-                    <a href="https://github.com/greyli/bluelog" title="Fork me on GitHub">GitHub</a> -
-                    <a href="http://helloflask.com" title="A HelloFlask project">HelloFlask</a>
+                <small> &copy; 2018 <a title="Written by adazhh">adazhh</a> -
+                    <a href="https://github.com/adazhh/flask_blog" title="Source code on GitHub">My GitHub</a>
                 </small>
             </p>
             <p class="float-right">
                 <small>
                     {% if current_user.is_authenticated %}
-                        <a href="{{ url_for('auth.logout', next=request.full_path) }}">Logout</a>
+                        <a href="{{ url_for('auth.logout', next=request.full_path) }}">登出</a>
                     {% else %}
-                        <a href="{{ url_for('auth.login', next=request.full_path) }}">Login</a>
+                        <a href="{{ url_for('auth.login', next=request.full_path) }}">登录</a>
                     {% endif %}
                 </small>
             </p>
         </footer>
     {% endblock footer %}
 </main>
+
 
 {% block scripts %}
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.slim.min.js') }}"></script>
@@ -108,4 +252,6 @@
     {{ moment.include_moment(local_js=url_for('static', filename='js/moment-with-locales.min.js')) }}
 {% endblock %}
 </body>
+
+
 </html>

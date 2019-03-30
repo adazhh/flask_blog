@@ -1,0 +1,936 @@
+2019-03-24 19:38:34,251 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ada/blog/bluelog/blueprints/blog.py", line 26, in index
+    return render_template('blog/index.html', pagination=pagination, posts=posts)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/ada/blog/bluelog/templates/blog/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 785, in parse_call
+    value = self.parse_expression()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 546, in parse_unary
+    node = self.parse_primary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 564, in parse_primary
+    next(self.stream)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2019-03-24 19:38:35,377 - flask.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/ada/blog/bluelog/__init__.py", line 121, in page_not_found
+    return render_template('errors/404.html'), 404
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/ada/blog/bluelog/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 785, in parse_call
+    value = self.parse_expression()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 546, in parse_unary
+    node = self.parse_primary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 564, in parse_primary
+    next(self.stream)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2019-03-24 19:38:48,365 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ada/blog/bluelog/blueprints/blog.py", line 26, in index
+    return render_template('blog/index.html', pagination=pagination, posts=posts)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/ada/blog/bluelog/templates/blog/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 785, in parse_call
+    value = self.parse_expression()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 546, in parse_unary
+    node = self.parse_primary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 564, in parse_primary
+    next(self.stream)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2019-03-24 19:38:51,065 - flask.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/ada/blog/bluelog/__init__.py", line 121, in page_not_found
+    return render_template('errors/404.html'), 404
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/ada/blog/bluelog/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 785, in parse_call
+    value = self.parse_expression()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 546, in parse_unary
+    node = self.parse_primary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 564, in parse_primary
+    next(self.stream)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2019-03-24 19:40:35,467 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ada/blog/bluelog/blueprints/blog.py", line 26, in index
+    return render_template('blog/index.html', pagination=pagination, posts=posts)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/ada/blog/bluelog/templates/blog/index.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 785, in parse_call
+    value = self.parse_expression()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 546, in parse_unary
+    node = self.parse_primary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 564, in parse_primary
+    next(self.stream)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2019-03-24 19:40:36,189 - flask.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/ada/blog/bluelog/__init__.py", line 121, in page_not_found
+    return render_template('errors/404.html'), 404
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/ada/blog/bluelog/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/base.html", line 79, in template
+    <header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg' }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 875, in subparse
+    add_data(self.parse_tuple(with_condexpr=True))
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 620, in parse_tuple
+    args.append(parse())
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 547, in parse_unary
+    node = self.parse_postfix(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 676, in parse_postfix
+    node = self.parse_call(node)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 785, in parse_call
+    value = self.parse_expression()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 432, in parse_expression
+    return self.parse_condexpr()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 437, in parse_condexpr
+    expr1 = self.parse_or()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 450, in parse_or
+    left = self.parse_and()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 459, in parse_and
+    left = self.parse_not()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 470, in parse_not
+    return self.parse_compare()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 474, in parse_compare
+    expr = self.parse_math1()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 496, in parse_math1
+    left = self.parse_concat()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 507, in parse_concat
+    args = [self.parse_math2()]
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 517, in parse_math2
+    left = self.parse_pow()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 528, in parse_pow
+    left = self.parse_unary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 546, in parse_unary
+    node = self.parse_primary()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/parser.py", line 564, in parse_primary
+    next(self.stream)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 359, in __next__
+    self.current = next(self._iter)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 562, in wrap
+    for lineno, token, value in stream:
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/lexer.py", line 690, in tokeniter
+    filename)
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2019-03-24 20:03:27,223 - flask.app - ERROR - Exception on /blog/index.html [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/ada/blog/bluelog/__init__.py", line 121, in page_not_found
+    return render_template('errors/404.html'), 404
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/blog/bluelog/templates/base.html", line 30, in top-level template code
+    <a class="navbar-brand" href="{{ url_for('templates',filename='blog/index.html') }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'templates' with values ['filename']. Did you mean 'static' instead?
+2019-03-24 20:03:28,644 - flask.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/ada/blog/bluelog/__init__.py", line 121, in page_not_found
+    return render_template('errors/404.html'), 404
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/blog/bluelog/templates/base.html", line 30, in top-level template code
+    <a class="navbar-brand" href="{{ url_for('templates',filename='blog/index.html') }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'templates' with values ['filename']. Did you mean 'static' instead?
+2019-03-24 20:08:14,298 - flask.app - ERROR - Exception on /blog/index.html [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/ada/blog/bluelog/__init__.py", line 121, in page_not_found
+    return render_template('errors/404.html'), 404
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/blog/bluelog/templates/base.html", line 32, in top-level template code
+    {{ nav_link('index','首页') }}
+jinja2.exceptions.UndefinedError: 'nav_link' is undefined
+2019-03-24 20:08:15,206 - flask.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/ada/blog/bluelog/__init__.py", line 121, in page_not_found
+    return render_template('errors/404.html'), 404
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/blog/bluelog/templates/base.html", line 32, in top-level template code
+    {{ nav_link('index','首页') }}
+jinja2.exceptions.UndefinedError: 'nav_link' is undefined
+2019-03-25 07:16:31,634 - flask.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ada/blog/bluelog/blueprints/blog.py", line 26, in index
+    return render_template('blog/index.html', pagination=pagination, posts=posts)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/blog/index.html", line 2, in top-level template code
+    {% from 'bootstrap/pagination.html' import render_pager %}
+  File "/home/ada/blog/bluelog/templates/base.html", line 19, in top-level template code
+    {% block head %}
+  File "/home/ada/blog/bluelog/templates/base.html", line 28, in block "head"
+    <link rel="stylesheet" href="{{ url_for('static',finename='css/bootstrap.min.css') }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'static' with values ['finename']. Did you forget to specify values ['filename']?
+2019-03-25 07:16:33,562 - flask.app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1791, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1774, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/ctx.py", line 336, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1713, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 1644, in handle_http_exception
+    return handler(e)
+  File "/home/ada/blog/bluelog/__init__.py", line 121, in page_not_found
+    return render_template('errors/404.html'), 404
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 135, in render_template
+    context, ctx.app)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/templating.py", line 117, in _render
+    rv = template.render(context)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ada/blog/bluelog/templates/errors/404.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "/home/ada/blog/bluelog/templates/base.html", line 19, in top-level template code
+    {% block head %}
+  File "/home/ada/blog/bluelog/templates/base.html", line 28, in block "head"
+    <link rel="stylesheet" href="{{ url_for('static',finename='css/bootstrap.min.css') }}">
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/helpers.py", line 356, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/app.py", line 2061, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/flask/helpers.py", line 345, in url_for
+    force_external=external)
+  File "/home/ada/.virtualenvs/blog-gS0xn9h9/lib/python3.5/site-packages/werkzeug/routing.py", line 1776, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'static' with values ['finename']. Did you forget to specify values ['filename']?

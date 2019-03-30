@@ -3,9 +3,24 @@
 
 {% block title %}New Link{% endblock %}
 
+<header class="masthead" style="background-image: url('../../static/img/home-bg.jpg')">
+{#<header class="masthead" style="background-image: {{ url_for('static', filename='img/home-bg.jpg') }}">#}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>adazhh's Blog</h1>
+                    <span class="subheading">It's beatuiful day.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
 {% block content %}
     <div class="page-header">
-        <h1>New Link</h1>
+        <h1>新建链接</h1>
     </div>
     <div class="row">
         <div class="col-md-6">
